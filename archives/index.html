@@ -5,6 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 4.2.0">
+
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("https://aaron-gp.github.io"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
@@ -26,7 +41,7 @@
     exturl: false,
     sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":true,"style":"mac"},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
     mediumzoom: false,
@@ -40,18 +55,18 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},
+    path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
 </script>
 
-  <meta name="description" content="分享学习资料以及学习Python的Markdown">
+  <meta name="description" content="学习资料及个人总结分享">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Aaron-Gp">
 <meta property="og:url" content="http://yoursite.com/archives/index.html">
 <meta property="og:site_name" content="Aaron-Gp">
-<meta property="og:description" content="分享学习资料以及学习Python的Markdown">
+<meta property="og:description" content="学习资料及个人总结分享">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Aaron-Gp">
 <meta property="article:tag" content="Python">
@@ -102,10 +117,11 @@
   </style>
 </noscript>
 
+  <script src="/js/jquery.min.js"></script>
 <link rel="alternate" href="/atom.xml" title="Aaron-Gp" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
+<body itemscope itemtype="http://schema.org/WebPage">  
   <div class="container use-motion">
     <div class="headband"></div>
 
@@ -120,7 +136,7 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-        <p class="site-subtitle">学习！！！</p>
+        <p class="site-subtitle">我爱学习，学习爱我！！！</p>
   </div>
 
   <div class="site-nav-toggle">
@@ -141,14 +157,49 @@
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
 </div>
     </header>
 
@@ -271,7 +322,7 @@
     <img class="site-author-image" itemprop="image" alt="Aaron-Gp"
       src="/images/android-chrome-192x192.png">
   <p class="site-author-name" itemprop="name">Aaron-Gp</p>
-  <div class="site-description" itemprop="description">分享学习资料以及学习Python的Markdown</div>
+  <div class="site-description" itemprop="description">学习资料及个人总结分享</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -284,6 +335,14 @@
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Aaron-Gp" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Aaron-Gp" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+      </span>
+  </div>
 
 
 
@@ -310,11 +369,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Aaron-Gp</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
-  </div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
-  </div>
 
         
 
@@ -404,11 +458,17 @@ window.addEventListener('pjax:success', () => {
 </script>
 
 
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
 
 
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 
@@ -445,9 +505,9 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       appId: 'yF2UmmizomamSFSaxY4vbGv0-gzGzoHsz',
       appKey: 'desUuTfFu73sqobdbTdwqppu',
       placeholder: "(,,•∀•)ノ゛hello",
-      avatar: 'identicon',
+      avatar: 'mp',
       meta: guest,
-      pageSize: '10' || 10,
+      pageSize: '8' || 10,
       visitor: true,
       lang: '' || 'zh-cn',
       path: location.pathname,
@@ -459,5 +519,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 </script>
 
     </div>
-</body>
+
+  <script type="text/javascript" src="/js/click_show_text.js"></script>  
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/chitose.model.json"},"display":{"position":"right","width":300,"height":600,"hOffset":-20,"vOffset":-120},"mobile":{"show":true,"scale":0.3},"react":{"opacity":0.8},"dialog":{"enable":true},"log":false});</script></body>
 </html>
