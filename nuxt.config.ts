@@ -5,9 +5,9 @@ export default defineNuxtConfig({
 	// app: {
 	// 	buildAssetsDir: "/static/",
 	// },
-	router: {
-		base: "/aaron-gp.github.io/",
-	},
+	// router: {
+	// 	base: "/aaron-gp.github.io/",
+	// },
 	devtools: { enabled: true },
 	app: {
 		head: {
