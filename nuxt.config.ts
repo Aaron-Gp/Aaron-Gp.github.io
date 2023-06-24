@@ -1,9 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 export default defineNuxtConfig({
-	ssr: false,
-	app: {
-		buildAssetsDir: "/static/",
+	// ssr: false,
+	// app: {
+	// 	buildAssetsDir: "/static/",
+	// },
+	router: {
+		base: "/aaron-gp.github.io/",
 	},
 	devtools: { enabled: true },
 	app: {
