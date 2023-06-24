@@ -1,23 +1,23 @@
 <template>
-  <NaiveConfig :theme-config="themeConfig">
+  <!-- <NaiveConfig :theme-config="themeConfig"> -->
     <NuxtLayout>
-      <ClientOnly>
+      <!-- <ClientOnly> -->
         <NuxtPage />
-      </ClientOnly>
+      <!-- </ClientOnly> -->
     </NuxtLayout>
-  </NaiveConfig>
+  <!-- </NaiveConfig> -->
 </template>
 
 
 <script setup lang="ts">
-import { ThemeConfig } from "@bg-dev/nuxt-naiveui";
+// import { ThemeConfig } from "@bg-dev/nuxt-naiveui";
 
 
-const themeConfig: ThemeConfig = {
-  shared: {
-    common: {
-      fontFamily: 'Arial',
-    },
-  },
-};
+// const themeConfig: ThemeConfig = {
+//   shared: {
+//     common: {
+//       fontFamily: 'Arial',
+//     },
+//   },
+// };
 </script>

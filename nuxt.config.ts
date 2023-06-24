@@ -23,12 +23,12 @@ export default {
 			autoprefixer: {},
 		},
 	},
-	modules: ["@bg-dev/nuxt-naiveui"],
-	naiveui: {
-		colorModePreference: "light",
-		iconSize: 18,
-		themeConfig: {},
-	},
+	// modules: ["@bg-dev/nuxt-naiveui"],
+	// naiveui: {
+	// 	colorModePreference: "light",
+	// 	iconSize: 18,
+	// 	themeConfig: {},
+	// },
 	tailwindcss: {
 		exposeConfig: true,
 	},

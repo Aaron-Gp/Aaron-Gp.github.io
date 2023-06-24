@@ -4,24 +4,16 @@
     </header>
     <main class="main space-y-10 mb-40">
         <Gradient class=" -z-10"/>
-        <n-button @click="{console.log(instance);instance>0?pass:getChild();instance++;}">
-            点它
-        </n-button>
+        <button @click="{console.log(instance);instance>0?pass:getChild();instance++;}" class=" border border-slate-800 rounded">click me</button>
+        <!-- <n-button @click="{console.log(instance);instance>0?pass:getChild();instance++;}">
+            点它1
+        </n-button> -->
         <Game ref="game" />
         <!-- <div class="" id="home">
             <Gradient />
             <h1>Hello Nuxt 3</h1>
             <img src="@/assets/car.jpg" alt="car" />
             <IconsAirplay />
-        </div> -->
-        <!-- <div>
-            <h1>test</h1>
-        </div>
-        <div>
-            <h1>test</h1>
-        </div>
-        <div>
-            <h1>test</h1>
         </div> -->
     </main>
     <footer>
@@ -30,7 +22,7 @@
 </template>
 
 <script setup>
-import { defineComponent, ref } from "vue";
+import { ref } from "vue";
 const instance = ref(0)
 const game = ref()
 const getChild = () => {
@@ -39,7 +31,7 @@ const getChild = () => {
 }
 </script>
 
-<style>
+<style >
 html {
     scroll-behavior: smooth;
 }
