@@ -1,8 +1,10 @@
 <template>
   <NaiveConfig :theme-config="themeConfig">
-      <NuxtLayout>
+    <NuxtLayout>
+      <ClientOnly>
         <NuxtPage />
-      </NuxtLayout>
+      </ClientOnly>
+    </NuxtLayout>
   </NaiveConfig>
 </template>
 
