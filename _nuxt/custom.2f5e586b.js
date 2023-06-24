@@ -1,0 +1,1 @@
+import{_ as t}from"./_plugin-vue_export-helper.c27b6911.js";import{a as o,r as s,e as r,o as c}from"./entry.b7bb4c9b.js";const a={},n={class:"h-screen text-white bg-blue-900"},_=r("p",null,"Custom Layout",-1);function l(e,d){return c(),o("div",n,[_,s(e.$slots,"default")])}const i=t(a,[["render",l]]);export{i as default};
