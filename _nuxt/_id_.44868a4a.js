@@ -1,0 +1,1 @@
+import{b as t,a,t as s,o as r}from"./entry.527dddb2.js";const l={__name:"[id]",setup(n){const e=t();return console.log(e.params.id),(o,c)=>(r(),a("div",null,"event id: "+s(o.$route.params.id),1))}};export{l as default};
